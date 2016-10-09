@@ -10,10 +10,10 @@ public class HotDogCookoutCalculator {
 
 	public static void main(String args[]){
 
-    // variable to store name 
+    // store user name
 		String name;
 
-		int people, // variable to store number of people
+		int people, // store number of people
 		hotDog=10,
 		buns=8;
 
@@ -28,7 +28,7 @@ public class HotDogCookoutCalculator {
 		System.out.println("Hello " + name + ": \nHow many people are coming to the party ?");
 		people = input.nextInt();
 
-		///
+		/// calculations
 		if(people <= 8)
 		{
 			hd = 10 - people;
