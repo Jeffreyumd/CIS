@@ -8,8 +8,6 @@ public class Personal {
 
 	public static void main(String args[]){
 
-
-
 		// varibles that would be printed
 		String name = "Jeffrey Alhassan";
 		String address = "879 Lexington street,";
