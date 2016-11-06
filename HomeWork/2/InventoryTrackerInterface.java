@@ -3,25 +3,14 @@ public class InventoryTrackerInterface {
 
 	public static void main(String[] args){
 
-<<<<<<< HEAD
+		// instance for scanner class
 		Scanner input = new Scanner(System.in);
-=======
-		 //Inventory inv;
-
-		Item a = new Item("box",1,100.0,"level");
-		Item c = new Item("box",1,100.0,"level");
-		System.out.println(a.getName());
-		System.out.println(a.getQuantity());
-		System.out.println(a.getPrice());
-		System.out.println(a.getUPC());
->>>>>>> ed97ed28414f6e1879c4f7933800171fce824a8e
 
 		boolean active = true; // check the user status
 		int num; // user option for switch statment
 
 		Inventory b = new Inventory();
 
-<<<<<<< HEAD
 		while(active == true)
 		{
 			// variables to store user input
@@ -111,18 +100,9 @@ public class InventoryTrackerInterface {
 						break;
 		  }
 		}
-		
+
 		input.close();
 
-=======
-
-		b.addItem(a);
-		b.addItem(a);
-		b.addItem(c);
-
-
-		System.out.println("Totoal number of Item " + b.getTotalNumberOfItems());
->>>>>>> ed97ed28414f6e1879c4f7933800171fce824a8e
 	}
 
 }
