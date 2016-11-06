@@ -1,4 +1,8 @@
-
+/**
+ * BY Jeffrey Alhassan
+ * Date: 10/15/2016
+ * HomeWork 2
+ * **/
 public class Item {
 
 	//variable for the Item class

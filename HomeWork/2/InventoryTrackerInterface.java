@@ -1,13 +1,17 @@
+/**
+ * BY Jeffrey Alhassan
+ * Date: 10/15/2016
+ * HomeWork 2
+ * **/
 import java.util.Scanner;
 public class InventoryTrackerInterface {
 
 	public static void main(String[] args){
 
-		// instance for scanner class
 		Scanner input = new Scanner(System.in);
 
 		boolean active = true; // check the user status
-		int num; // user option for switch statment
+		int num; // user option for switch statement
 
 		Inventory b = new Inventory();
 
@@ -19,7 +23,7 @@ public class InventoryTrackerInterface {
 			int quantity;
 			double price;
 
-			// Ask User what they wanna do
+			// Ask User what they action
 			System.out.println("1. Add item to Inventory");
 			System.out.println("2. Get an items info");
 			System.out.println("3. Save Inventory to file");
@@ -32,17 +36,20 @@ public class InventoryTrackerInterface {
 
 				case 1:
 
+					//ask user for item name in string
 					System.out.println("Enter new Item name");
 					input.nextLine();
 					name = input.nextLine();
 
-
+					//ask user for item quantity in int
 					System.out.println("Enter new item quantity");
 					quantity = input.nextInt();
 
+					//ask user for item price in double
 					System.out.println("Enter new item price");
 					price = input.nextDouble();
 
+					// ask user for item UPC in string
 					System.out.println("Enter new item UPC");
 					input.nextLine();
 					upc = input.nextLine();
@@ -56,8 +63,8 @@ public class InventoryTrackerInterface {
 
 				case 2:
 
-					int i = b.getTotalNumberOfItems() - 1;
-
+					// check to make sure the is a item in the array, also display number of array on the side
+					int i = b.getTotalNumberOfItems() - 1; //array starts form 0
 					if(i < 0)
 					{
 						System.out.println("No item in the Inventory");
@@ -85,8 +92,8 @@ public class InventoryTrackerInterface {
 					break;
 
 				case 4:
-					// diaplay all the data in the inventory
-					b.loadInventoryFromFile("Inventory.txt");
+					// display all the data in the inventory
+					b.loadInventoryFromFile("Inventory");
 					break;
 
 				case 5:
@@ -96,10 +103,12 @@ public class InventoryTrackerInterface {
 					break;
 
 					default:
+						// if user types in something unavailable
 						System.out.println("Input not supported try again");
 						break;
-		  }
-		}
+
+		  } // end of switch statement
+		} // end of while loop
 
 		input.close();
 
