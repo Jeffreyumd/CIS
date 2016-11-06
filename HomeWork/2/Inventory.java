@@ -32,7 +32,11 @@ public class Inventory {
 	// add Item into the Array
 	public void addItem(Item newItem){
 
+<<<<<<< HEAD
 		// check to see if item is a Instace of a Item, then check if the Item has been added
+=======
+		// check to see if item has been added
+>>>>>>> ed97ed28414f6e1879c4f7933800171fce824a8e
 		if(newItem == null)
 		{
 			System.out.println("Item not added");
