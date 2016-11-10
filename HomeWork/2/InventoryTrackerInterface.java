@@ -1,8 +1,11 @@
+
 /**
- * BY Jeffrey Alhassan
+ * @author Jeffrey Alhassan
  * Date: 10/15/2016
  * HomeWork 2
- * **/
+ */
+
+
 import java.util.Scanner;
 public class InventoryTrackerInterface {
 
@@ -15,6 +18,8 @@ public class InventoryTrackerInterface {
 
 		Inventory b = new Inventory();
 
+
+
 		while(active == true)
 		{
 			// variables to store user input
@@ -23,11 +28,13 @@ public class InventoryTrackerInterface {
 			int quantity;
 			double price;
 
-			// Ask User what they action
+
+			// Ask User for action
+			System.out.println("Select action: 1-5");
 			System.out.println("1. Add item to Inventory");
 			System.out.println("2. Get an items info");
 			System.out.println("3. Save Inventory to file");
-			System.out.println("4. Loard Inventory from file");
+			System.out.println("4. Lord Inventory from file");
 			System.out.println("5. Exit");
 
 			num = input.nextInt();
