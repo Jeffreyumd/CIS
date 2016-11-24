@@ -3,11 +3,13 @@ import java.util.Scanner;
 
 public class AreaCalculator {
 	
+	//variables for the class
 	static boolean active = true;
 	static int choice;
-	static Scanner input = new Scanner(System.in);
-	
+
 	static double radius, length, side, width, base, heigth;
+	
+	static Scanner input = new Scanner(System.in);
 	
 	
 	public static void main(String[] args){
