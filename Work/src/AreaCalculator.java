@@ -9,6 +9,7 @@ public class AreaCalculator {
 	
 	static double radius, length, side, width, base, heigth;
 	
+	
 	public static void main(String[] args){
 		
 		
@@ -36,33 +37,83 @@ public class AreaCalculator {
 			switch(choice) {
 			
 			case 1:
+				//Circle
 				System.out.println("Circle radius: ");
 				radius = validDouble();
-				areaCircle(radius);
+				
+				// print area
+				System.out.println("The Area is: "+ areaCircle(radius));
+				System.out.println("=======================");
 				break;
 				
 			case 2:
+				//Rectangle
 				System.out.println("Rectangle length: ");
 				length = validDouble();
 				
 				System.out.println("Rectangle Width: ");
 				width = validDouble();
+				
+				System.out.println("The Area is: "+ areaRectangle(length,width));
+				System.out.println("=======================");
 				break;
 				
 			case 3:
+				//Square
+				System.out.println("Square side length: ");
+				side = validDouble();
+				
+				System.out.println("The Area is: "+ areaSquare(side));
+				System.out.println("=======================");
 				break;
 				
 			case 4:
+				//Triangle
+				System.out.println("Triangle base: ");
+				base = validDouble();
+				
+				System.out.println("Triangle Height");
+				heigth = validDouble();
+				
+				System.out.println("The Area is: "+ areaTriangle(base,heigth));
+				System.out.println("=======================");
 				break;
 				
 			case 5:
-				System.out.println("Program end");
+				System.out.println("End Program");
+				active = false;
 				break;
 			}// end of switch
+			
+			
 		}// end of while
 		
+	}// end of main
+	
+	
+	
+	
+	// return the area of circle
+	public static double areaCircle(double radius){
+		final double PI = 3.14;
+		return radius*=radius *PI;
 	}
 	
+	// return the area of a rectangle
+	public static double areaRectangle(double length, double width){
+		return length*width;
+	}
+	
+	// return the area of a square
+	public static double areaSquare(double side){
+		return side*side;
+	}
+	
+	// return the area of a Triangle
+	public static double areaTriangle(double base, double height){
+		final double half = .5;
+		return (base*height)* half;
+	}
 	
 	/**
 	 * The method checks to see if the user input is a valid value.
@@ -92,33 +143,7 @@ public class AreaCalculator {
 		}
 	}
 	
-	// return the area of circle
-	public static double areaCircle(double radius){
-		return radius;
-	}
-	
-	// return the area of a rectangle
-	public static double areaRectangle(int length, int width){
-		return length;
-	}
-	
-	public static double areaSquare(int side){
-		return side;
-	}
-	
-	public static double areaTriangle(int base, int height){
-		return base;
-	}
-	
-
 
 
 }
 
-
-/**
-public static double area_circle( int radius )              // returns the area of a circle
-public static int area_rectangle( int length, int width )   // returns the area of a rectangle
-public static int area_square( int side )                   // returns the area of a square
-public static double area_triangle( int base, int height )  // returns the area of a triangle
-*/
