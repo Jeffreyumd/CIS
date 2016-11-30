@@ -1,4 +1,4 @@
-package lab7Extra;
+package HomeWork.ExtraCredits;
 import java.util.Scanner;
 
 /**

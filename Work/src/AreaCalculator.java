@@ -17,7 +17,7 @@ public class AreaCalculator {
 		
 		// Print intro
 		System.out.println("Area Calculator");
-		System.out.println("=======================");
+		System.out.println("=====================");
 		
 		
 		//Ask user for action
@@ -34,7 +34,7 @@ public class AreaCalculator {
 			
 			
 			// store user input
-			choice = input.nextInt();
+			choice = validInt();
 			
 			switch(choice) {
 			
@@ -78,12 +78,13 @@ public class AreaCalculator {
 				heigth = validDouble();
 				
 				System.out.println("The Area is: "+ areaTriangle(base,heigth));
-				System.out.println("=======================");
+				System.out.println("=====================");
 				break;
 				
 			case 5:
 				System.out.println("End Program");
 				active = false;
+				input.close();
 				break;
 			}// end of switch
 			
@@ -117,6 +118,8 @@ public class AreaCalculator {
 		return (base*height)* half;
 	}
 	
+	
+	
 	/**
 	 * The method checks to see if the user input is a valid value.
 	 * If the user inputs something other than a double or a integer,
@@ -130,15 +133,46 @@ public class AreaCalculator {
 			return input.nextDouble();
 		} 
 		
-		// If user input is not a String
-		catch(InputMismatchException e){
+		// If user input is a String
+		catch(InputMismatchException e)
+		{
 			input.next();
 			System.out.println("Input not a number !");
 			return 0;
 		}
 		
-		// other exception/problem
-		catch(Exception e){
+		// other exceptions/problem
+		catch(Exception e)
+		{
+			input.next();
+			System.out.println(e.getMessage());
+			return 0;
+		}
+	}
+	
+	/**
+	 * The method checks to see if the user has inputed the correct value.
+	 * If the user inputs anything other than a Int a InputMismach occurs
+	 * @return input.nextInt
+	 */
+	public static int validInt()
+	{
+		try {
+			// return user input 
+			return input.nextInt();
+		}
+		
+		// if user input is a String 
+		catch(InputMismatchException e)
+		{
+			input.next();
+			System.out.println("Input not available");
+			return 0;
+		}
+		
+		// other exceptions
+		catch(Exception e)
+		{
 			input.next();
 			System.out.println(e.getMessage());
 			return 0;
