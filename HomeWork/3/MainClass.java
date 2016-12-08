@@ -11,14 +11,14 @@ public class MainClass {
 		try{
 			//Create instance of Scanner and provide instance of File pointing to the txt file
 			Scanner input = new Scanner(new File("WorldSeriesWinners.txt"));
-			
+
 			//Get the number of teams
 			int years = input.nextInt();
 			input.nextLine();//move to the next line
-			
+
 			//Create the array
 			listOfWinners = new Winner[years];
-			
+
 			//for every year in the textfile
 			for(int index = 0; index<years; index++)
 			{
@@ -27,28 +27,80 @@ public class MainClass {
 				input.skip("	");
 				//Get the team
 				String team = input.nextLine();
-				
+
 				//Create an instance of Winner and add it to the next spot in the array
 				listOfWinners[index] = new Winner(team,year);
 			}
+
+			for(int i=0; i < listOfWinners.length; i++)
+			{
+				//System.out.println(listOfWinners[i].getYear());
+			}
+
 		}catch(Exception e)
 		{
-			System.out.println("Hey Meatbag, I'm Bender, and something wrong in the loadFromFile method happened!");
+			//System.out.println("Hey Meatbag, I'm Bender, and something wrong in the loadFromFile method happened!");
 			System.out.println(e.toString());
+			System.out.println(e.getMessage());
 			System.exit(0);
 		}
 	}
-	
+
 	public static void sortByTeamName()
 	{
-		Arrays.sort(listOfWinners[team]);
+		// store current i 
+		Winner temp;
+		// store the lowest value 
+		Winner min;
+
+
+		//Print the array
+		for(int i=0; i<listOfWinners.length; i++)
+		{
+			// select the first array value
+			min = listOfWinners[i];
+
+			for(int j=i+1; j < listOfWinners.length; j++)
+			{
+				// if value of the j is lower than the min make j the new min
+				if(listOfWinners[j].getTeam().compareTo(min.getTeam()) > 0)
+				{
+					min= listOfWinners[j];
+					temp = listOfWinners[i];
+					listOfWinners[i] = min;
+					listOfWinners[j] = temp;
+					
+				}
+			}
+
+		}
 	}
-	
+
 	public static void sortByYear()
 	{
-		//Fill In Code
-	}
+
+		Winner temp;
+		Winner min;
+
+		for(int i=0; i < listOfWinners.length-1; i++)
+		{
+			min = listOfWinners[i];
 	
+			for(int j=i+1; j < listOfWinners.length; j++)
+			{
+				if(listOfWinners[j].getYear() < min.getYear())
+				{
+					min = listOfWinners[j];
+					temp = listOfWinners[i];
+					listOfWinners[i] = min;
+					listOfWinners[j] = temp;
+				}
+			}
+
+		}
+
+	}
+
 	public static void printArray()
 	{
 		//Print the array
@@ -57,23 +109,64 @@ public class MainClass {
 			System.out.println(listOfWinners[index].getYear()+" Winners " + listOfWinners[index].getTeam());
 		}
 	}
-	
+
 	public static void searchForWinnerByYear(int year)
 	{
-		//Fill In Code
+		boolean match = false;
+		int check = 0;
+
+		while(match != true)
+		{
+			for(int i=0; i < listOfWinners.length; i++)
+			{
+				// check to see if the numbers match
+				if(listOfWinners[i].getYear() == year)
+				{
+					match = true;
+					System.out.println("Year:" + listOfWinners[i].getYear() + " Winner:" + listOfWinners[i].getTeam());
+				}
+			}// end of for loop
+
+			// if number does not exit
+			if(check == 0)
+			{
+				System.out.println("Invalid year");
+				match = true;
+			}
+		}// end of while loop
+
 	}
-	
+
 	public static void searchForYearsATeamWon(String team)
 	{
-		//Fill In Code
-	}
-	
-	public static void main(String[] args) {
+		boolean match = false;
+		int check = 0;
 		
+		while(match != true)
+		{
+			for(int i=0; i < listOfWinners.length; i++)
+			{
+				if(listOfWinners[i].getTeam().compareTo(team) == 0)
+				{
+					match = true;
+					System.out.println("Year:" + listOfWinners[i].getYear() + " Winner:" + listOfWinners[i].getTeam());
+				}
+			}// end of loop
+			
+			if(check == 0)
+			{
+				System.out.println("Invalid Team");
+				match = true;
+			}
+		}// end of loop
+	}
+
+	public static void main(String[] args) {
+
 		int choice;
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("World Series Program");
-		
+
 		//Load textfile 
 		loadFromFile();
 		do{
@@ -84,7 +177,7 @@ public class MainClass {
 			System.out.println("5.........Exit the Program");
 			System.out.println("Which Choice Would You Like?");
 			choice = keyboard.nextInt();
-			
+
 			switch(choice)
 			{
 			case 1:
@@ -116,7 +209,7 @@ public class MainClass {
 				System.out.println("Invalid Choice");
 			}
 		}while(choice != 5);
-		
+
 		System.out.println("Goodbye!");
 	}
 
