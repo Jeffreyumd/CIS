@@ -48,9 +48,9 @@ public class MainClass {
 
 	public static void sortByTeamName()
 	{
-		// store current i 
+		// store current i
 		Winner temp;
-		// store the lowest value 
+		// store the lowest value
 		Winner min;
 
 
@@ -69,11 +69,10 @@ public class MainClass {
 					temp = listOfWinners[i];
 					listOfWinners[i] = min;
 					listOfWinners[j] = temp;
-					
-				}
-			}
 
-		}
+				}// end of if
+			} // end of for loop
+		} // end of for loop
 	}
 
 	public static void sortByYear()
@@ -85,7 +84,7 @@ public class MainClass {
 		for(int i=0; i < listOfWinners.length-1; i++)
 		{
 			min = listOfWinners[i];
-	
+
 			for(int j=i+1; j < listOfWinners.length; j++)
 			{
 				if(listOfWinners[j].getYear() < min.getYear())
@@ -94,11 +93,10 @@ public class MainClass {
 					temp = listOfWinners[i];
 					listOfWinners[i] = min;
 					listOfWinners[j] = temp;
-				}
-			}
 
-		}
-
+				} // end of if
+			} // end of for loop
+		} // end of for loop
 	}
 
 	public static void printArray()
@@ -141,7 +139,7 @@ public class MainClass {
 	{
 		boolean match = false;
 		int check = 0;
-		
+
 		while(match != true)
 		{
 			for(int i=0; i < listOfWinners.length; i++)
@@ -152,7 +150,7 @@ public class MainClass {
 					System.out.println("Year:" + listOfWinners[i].getYear() + " Winner:" + listOfWinners[i].getTeam());
 				}
 			}// end of loop
-			
+
 			if(check == 0)
 			{
 				System.out.println("Invalid Team");
@@ -167,7 +165,7 @@ public class MainClass {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("World Series Program");
 
-		//Load textfile 
+		//Load textfile
 		loadFromFile();
 		do{
 			System.out.println("1.........Print out the Winner List sorted by team name");
