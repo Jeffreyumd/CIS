@@ -1,5 +1,8 @@
 import java.io.File;
+<<<<<<< HEAD
 import java.util.Arrays;
+=======
+>>>>>>> 1c7760675cb8ed5d75a498a685d7ea7605bd6dde
 import java.util.Scanner;
 
 
@@ -11,6 +14,7 @@ public class MainClass {
 		try{
 			//Create instance of Scanner and provide instance of File pointing to the txt file
 			Scanner input = new Scanner(new File("WorldSeriesWinners.txt"));
+<<<<<<< HEAD
 
 			//Get the number of teams
 			int years = input.nextInt();
@@ -19,6 +23,16 @@ public class MainClass {
 			//Create the array
 			listOfWinners = new Winner[years];
 
+=======
+			
+			//Get the number of teams
+			int years = input.nextInt();
+			input.nextLine();//move to the next line
+			
+			//Create the array
+			listOfWinners = new Winner[years];
+			
+>>>>>>> 1c7760675cb8ed5d75a498a685d7ea7605bd6dde
 			//for every year in the textfile
 			for(int index = 0; index<years; index++)
 			{
@@ -27,6 +41,7 @@ public class MainClass {
 				input.skip("	");
 				//Get the team
 				String team = input.nextLine();
+<<<<<<< HEAD
 
 				//Create an instance of Winner and add it to the next spot in the array
 				listOfWinners[index] = new Winner(team,year);
@@ -101,6 +116,30 @@ public class MainClass {
 
 	}
 
+=======
+				
+				//Create an instance of Winner and add it to the next spot in the array
+				listOfWinners[index] = new Winner(team,year);
+			}
+		}catch(Exception e)
+		{
+			System.out.println("Hey Meatbag, I'm Bender, and something wrong in the loadFromFile method happened!");
+			System.out.println(e.toString());
+			System.exit(0);
+		}
+	}
+	
+	public static void sortByTeamName()
+	{
+	
+	}
+	
+	public static void sortByYear()
+	{
+		//Fill In Code
+	}
+	
+>>>>>>> 1c7760675cb8ed5d75a498a685d7ea7605bd6dde
 	public static void printArray()
 	{
 		//Print the array
@@ -109,6 +148,7 @@ public class MainClass {
 			System.out.println(listOfWinners[index].getYear()+" Winners " + listOfWinners[index].getTeam());
 		}
 	}
+<<<<<<< HEAD
 
 	public static void searchForWinnerByYear(int year)
 	{
@@ -167,6 +207,25 @@ public class MainClass {
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("World Series Program");
 
+=======
+	
+	public static void searchForWinnerByYear(int year)
+	{
+		//Fill In Code
+	}
+	
+	public static void searchForYearsATeamWon(String team)
+	{
+		//Fill In Code
+	}
+	
+	public static void main(String[] args) {
+		
+		int choice;
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("World Series Program");
+		
+>>>>>>> 1c7760675cb8ed5d75a498a685d7ea7605bd6dde
 		//Load textfile 
 		loadFromFile();
 		do{
@@ -177,7 +236,11 @@ public class MainClass {
 			System.out.println("5.........Exit the Program");
 			System.out.println("Which Choice Would You Like?");
 			choice = keyboard.nextInt();
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> 1c7760675cb8ed5d75a498a685d7ea7605bd6dde
 			switch(choice)
 			{
 			case 1:
@@ -209,7 +272,11 @@ public class MainClass {
 				System.out.println("Invalid Choice");
 			}
 		}while(choice != 5);
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 1c7760675cb8ed5d75a498a685d7ea7605bd6dde
 		System.out.println("Goodbye!");
 	}
 
