@@ -55,7 +55,7 @@ public class MainClass {
 
 
 		//Print the array
-		for(int i=0; i<listOfWinners.length; i++)
+		for(int i=0; i < listOfWinners.length; i++)
 		{
 			// select the first array value
 			min = listOfWinners[i];
@@ -65,9 +65,13 @@ public class MainClass {
 				// if value of the j is lower than the min make j the new min
 				if(listOfWinners[j].getTeam().compareTo(min.getTeam()) > 0)
 				{
+					// store new minmum
 					min= listOfWinners[j];
+					// hold i
 					temp = listOfWinners[i];
+					// make i the new min
 					listOfWinners[i] = min;
+					// j is the last value
 					listOfWinners[j] = temp;
 
 				}// end of if

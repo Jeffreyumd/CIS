@@ -2,7 +2,7 @@
 public class LoShuClassTester {
 
 	public static void main(String[] args) {
-		
+
 		LoShuMagic lsm = new LoShuMagic();
 		int matrix[][] = new int[3][3];
 		matrix[0][0] = 4;
@@ -14,7 +14,7 @@ public class LoShuClassTester {
 		matrix[2][0] = 8;
 		matrix[2][1] = 1;
 		matrix[2][2] = 6;
-		
+
 		if(lsm.test(matrix)==true)
 		{
 			System.out.println("Test 1 passed");
@@ -22,8 +22,9 @@ public class LoShuClassTester {
 		{
 			System.out.println("Test 1 failed");
 		}
-		matrix[0][1] = 10;
 		
+		matrix[0][1] = 10;
+
 		if(lsm.test(matrix)==false)
 		{
 			System.out.println("Test 2 passed");
