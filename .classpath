@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="HomeWork/2"/>
 	<classpathentry kind="src" path="Work/src"/>
+	<classpathentry kind="src" path="GUI/IvShop"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="Work/bin"/>
 </classpath>
