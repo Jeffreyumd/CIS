@@ -76,7 +76,8 @@ public class Algorithm1 {
 	{
 		for(int i=0; i < numArray.length; i++)
 		{
-			System.out.println("index"+i+ " " + numArray[i]);
+			i+1;
+			System.out.println("index: " + i + " " + numArray[i]);
 		}
 	}
 	
