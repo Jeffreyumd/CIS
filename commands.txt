@@ -1,0 +1,9 @@
+git commit: add file with a message
+git status: check the status of the git project
+git push : pushes all the new edit to the git online
+git pull: update the git online
+
+
+git add index.html -> git status -> git commit -m "" -> git push
+
+//testing
