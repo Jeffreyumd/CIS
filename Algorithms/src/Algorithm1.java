@@ -56,6 +56,7 @@ public class Algorithm1 {
 					System.out.println("Invalide input");
 				break;
 			}
+			input.close();
 		} while(num!=5);
 		
 		
