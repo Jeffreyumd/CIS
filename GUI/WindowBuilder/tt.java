@@ -18,6 +18,7 @@ import javax.swing.JTable;
 
 public class tt extends JFrame {
 
+	
 	private JPanel contentPane;
 	private JTextField fnField;
 	private JTextField lnField;
